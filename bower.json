@@ -1,0 +1,24 @@
+{
+  "name": "makermix",
+  "version": "0.0.0",
+  "homepage": "https://github.com/Gwasanaethau/makermix",
+  "authors": [
+    "Mark Pokorny <iridium193@gmail.com>"
+  ],
+  "description": "Makermix is a small byte-level project designed to simulate working as a team on two completely seperate parts of the project. An API is used to integrate the backend with the frontend of the application.",
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "jquery": "~2.1.4",
+    "angular": "~1.3.15",
+    "angular-resource": "~1.3.15",
+    "angular-mocks": "~1.3.15",
+    "angular-route": "~1.3.15"
+  }
+}
