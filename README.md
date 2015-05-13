@@ -1,4 +1,4 @@
-### Makermix ###
+# Makermix #
 
 Makermix is a small byte-level project designed to simulate working as a team on two completely seperate parts of the project. An API is used to integrate the backend with the frontend of the application.
 
@@ -83,6 +83,7 @@ MVP4
 API Expectations
 ----------------
 
+```
 GET /makers => { makers: [ { id: 1, name: "Joe" }, { id: 2, name: "Mark" } ] }
 POST /makers (name="Joe") => { id: 1, name: "Joe" }
 
@@ -92,6 +93,7 @@ GET /makers/:id => { pairedWith: [ {id: 1, name: "Joe"} ], notPairedWith: [ { id
 
 GET /pairs => {pairs: [{pairPartner1: {id: 1, name: "Joe"}, pairPartner2: { id: 2, name: "Mark" }}] }
 POST /pairs (pairPartner1 = 1, pairPartner2 = 2)
+```
 
 Technologies
 ------------
