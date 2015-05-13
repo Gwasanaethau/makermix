@@ -51,22 +51,27 @@ So that I can accelerate our learning by pairing together
 State
 -----
 
+```
 List of People
 Previous Pairs
 User
 Blacklist
+```
 
 Actions
 -------
 
+```
 Be able to choose a pair from a list
 Pair with everyone equally
 Randomly assign a pair
 Not be assigned a pair on my blacklist
+```
 
 MVP
 ---
 
+```
 MVp List of Makers
 MVp Be able to add a Maker
 MVp Be able to identify yourself as the Maker wanting to pair
@@ -79,6 +84,7 @@ MVp Get a random pair not on a blacklist
 MVP3
 MVp Be able deal with current pairings in real time
 MVP4
+```
 
 API Expectations
 ----------------
@@ -98,6 +104,7 @@ POST /pairs (pairPartner1 = 1, pairPartner2 = 2)
 Technologies
 ------------
 
+```
 B  Gus: Lightweight Rails for APIs (Rails API gem)
 B  Dan: MEAN stack (Angular + Node)
 B  Ici: REST + routes (Backend)
@@ -106,3 +113,4 @@ F  Jade: JavaScript (Angular + Node)
 F  Joe: CSS
 F  Rob: Node backend + Mongo db
 F  Mise (me): JavaScript
+```
