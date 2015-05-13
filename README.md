@@ -106,13 +106,6 @@ POST /pairs (pairPartner1 = 1, pairPartner2 = 2)
 Technologies
 ------------
 
-```
-B  Gus: Lightweight Rails for APIs (Rails API gem)
-B  Dan: MEAN stack (Angular + Node)
-B  Ici: REST + routes (Backend)
-B  Ilya: Node
-F  Jade: JavaScript (Angular + Node)
-F  Joe: CSS
-F  Rob: Node backend + Mongo db
-F  Mise (me): JavaScript
-```
+Front-end: AngularJS – Jade, Joe, Rob, Mark.
+
+Back-end: NodeJS – Gus, Dan, Iciar, Илья.
