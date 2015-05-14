@@ -1,8 +1,8 @@
-describe('GetUsersController',function(){
+describe('GetMakersController',function(){
   beforeEach(module('MakerMix'));
   var ctrl;
   beforeEach(inject(function($controller){
-    ctrl = $controller('GetUsersController')
+    ctrl = $controller('GetMakersController')
   }));
   var httBackend;
   beforeEach(inject(function($httpBackend){
@@ -15,7 +15,7 @@ describe('GetUsersController',function(){
       );
   }));
   it('returns users',function(){
-    ctrl.getUsers();
-    expect(ctrl.users.makers[0].name).toEq("Joe");
+    ctrl.getMakers();
+    expect(ctrl.makers[0].name).toEq("Joe");
   });
 });
