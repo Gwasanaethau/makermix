@@ -2,7 +2,7 @@ describe('GetMakersController',function(){
   beforeEach(module('MakerMix'));
   var ctrl;
   beforeEach(inject(function($controller){
-    ctrl = $controller('GetMakersController')
+    ctrl = $controller('GetMakersController');
   }));
   var httpBackend;
   beforeEach(inject(function($httpBackend){
