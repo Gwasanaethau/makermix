@@ -1,5 +1,5 @@
 describe('Makers Pairing Finder', function() {
-  var addMakerBox = element(by.model(addCtrl.newMaker));
+  var addMakerBox = element(by.model(addCtrl.addMaker));
   var addMakerButton = element(by.className('btn'));
 
   beforeEach(function() {
@@ -11,6 +11,8 @@ describe('Makers Pairing Finder', function() {
   });
 
   it('can add a Maker', function() {
-    expect(element(by.css('.notice'))).toMatch('Maker added');
+    addMakerBox.sendKeys('Joe');
+    addMakerButton.click();
+    expect(element(by.css('.notice'))).toMatch('Joe added');
   });
 });

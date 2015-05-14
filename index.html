@@ -10,12 +10,15 @@
     <script src="js/addMakerController.js"></script>
   </head>
   <body ng-app="MakerMix">
-  <div ng-controller="AddMakerController as addMakerCtrl">
-    <form>
-      <input ng-model="addMakerCtrl.addMaker">
-      <button></button>
-    </form>
-  <div>
+    <header>
+    </header>
+    <div ng-controller="AddMakerController as addMakerCtrl">
+      <form>
+        <input ng-model="addMakerCtrl.addMaker">
+        <button class="btn" ng-click="addMakerCtrl.postMaker(addMakerCtrl.addMaker)">Add Maker</button>
+      </form>
+      <p class="notice">{{addMakerCtrl.addedMaker}} added</p>
+    <div>
 
   </body>
 </html>
