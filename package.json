@@ -1,0 +1,36 @@
+{
+  "name": "makermix",
+  "version": "1.0.0",
+  "description": "Makermix is a small byte-level project designed to simulate working as a team on two completely seperate parts of the project. An API is used to integrate the backend with the frontend of the application.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jadeKing/makermix.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/jadeKing/makermix/issues"
+  },
+  "homepage": "https://github.com/jadeKing/makermix#readme",
+  "devDependencies": {
+    "chai": "^2.3.0",
+    "grunt": "^0.4.5",
+    "grunt-webdriver": "^0.5.1",
+    "jasmine-core": "^2.3.4",
+    "karma": "^0.12.31",
+    "karma-chrome-launcher": "^0.1.12",
+    "karma-jasmine": "^0.3.5",
+    "karma-phantomjs-launcher": "^0.1.4",
+    "mocha": "^2.2.4",
+    "protractor": "^2.0.0",
+    "selenium-standalone": "^4.4.0",
+    "webdriverio": "^2.4.5"
+  },
+  "dependencies": {
+    "express": "^4.12.3"
+  }
+}
