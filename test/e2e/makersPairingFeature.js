@@ -1,9 +1,9 @@
 describe('Makers Pairing Finder', function() {
-  var addMakerBox = element(by.model(addCtrl.addMaker));
+  var addMakerBox = element(by.model('addMakerCtrl.addMaker'));
   var addMakerButton = element(by.className('btn'));
 
   beforeEach(function() {
-    browser.get('http://localhost:3000');
+    browser.get('http://localhost:3030');
   });
 
   it('has a title', function() {
