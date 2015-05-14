@@ -3,7 +3,7 @@ module.exports = function(grunt){
     pkg: grunt.file.readJSON('package.json'),
     webdriver: {
       helloWorld: {
-        tests: "test/**/*"
+        tests: "test/server/*"
       },
       options: {
         desiredCapabilities: {
