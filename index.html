@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html ng-app="MakerMix">
+<html>
   <head>
     <title>Makers Pairing Finder</title>
     <script src="bower_components/jquery/dist/jquery.min.js"></script>
@@ -7,8 +7,18 @@
     <script src="bower_components/angular-resource/angular-resource.min.js"></script>
     <script src="bower_components/angular-mocks/angular-mocks.js"></script>
     <script src="js/app.js"></script>
+    <script src="js/addMakerController.js"></script>
   </head>
-  <body>
+  <body ng-app="MakerMix">
+    <header>
+    </header>
+    <div ng-controller="AddMakerController as addMakerCtrl">
+      <form>
+        <input ng-model="addMakerCtrl.addMaker">
+        <button class="btn" ng-click="addMakerCtrl.postMaker(addMakerCtrl.addMaker)">Add Maker</button>
+      </form>
+      <p class="notice">{{addMakerCtrl.addedMaker}} added</p>
+    <div>
 
   </body>
 </html>
