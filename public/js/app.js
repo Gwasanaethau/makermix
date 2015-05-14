@@ -1,1 +1,1 @@
-var app = angular.module('MakersPairingFinder', ['ngResource']);
+var app = angular.module('MakerMix', ['ngResource']);
