@@ -1,13 +1,10 @@
 var app = angular.module('MakerMix', ['ngResource']);
-app.controller("GetMakersController", ["$resource", function($resource){
-  var userResource = $resource("http://localhost:3000/makers");
+app.controller("GetMakersController", ["$http", function($http){
   var self = this;
   self.getMakers= function(){
-    var userList = userResource.get();
-    userList.$promise.then(function(data){
-      console.log("feedback" + data);
+    var userList = $http.get("http://localhost:3000/makers");
+    userList.success(function(data){
       self.makers = data.makers;
     });
-    console.log("Outside call");
   };
 }]);
