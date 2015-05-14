@@ -18,7 +18,8 @@ describe('AddMakerController', function() {
 
   it('adds a Maker', function() {
     ctrl.addMaker = 'Joe';
-    ctrl.getMakers();
-    expect(ctrl.addedMaker.name).toEq('Joe');
+    ctrl.postMaker();
+    httpBackend.flush();
+    expect(ctrl.addedMaker.name).toEqual('Joe');
   });
 });
