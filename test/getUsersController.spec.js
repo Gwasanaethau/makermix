@@ -4,7 +4,7 @@ describe('GetMakersController',function(){
   beforeEach(inject(function($controller){
     ctrl = $controller('GetMakersController')
   }));
-  var httBackend;
+  var httpBackend;
   beforeEach(inject(function($httpBackend){
     httpBackend = $httpBackend;
     httpBackend
