@@ -8,7 +8,7 @@ app.get("/",function(request, response){
   response.sendFile(__dirname + '/index.html');
 });
 
-server.listen(3030, function(){
+server.listen(3000, function(){
   console.log("Server working on 3000");
 });
 

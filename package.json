@@ -28,6 +28,7 @@
     "karma-phantomjs-launcher": "^0.1.4",
     "mocha": "^2.2.4",
     "protractor": "^2.0.0",
+    "protractor-http-mock": "^0.1.12",
     "selenium-standalone": "^4.4.0",
     "webdriverio": "^2.4.5"
   },
