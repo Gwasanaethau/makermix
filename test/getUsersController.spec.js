@@ -1,5 +1,5 @@
 describe('GetUsersController',function(){
-  beforeEach(module('GetUsersController'));
+  beforeEach(module('MakerMix'));
   var ctrl;
   beforeEach(inject(function($controller){
     ctrl = $controller('GetUsersController')
