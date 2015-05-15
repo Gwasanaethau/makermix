@@ -18,14 +18,14 @@
         <button class="btn-add" ng-click="addMakerCtrl.postMaker(addMakerCtrl.addMaker)">Add Maker</button>
       </form>
       <p class="notice" ng-show="addMakerCtrl.isNoticeShow">{{addMakerCtrl.addedMaker}} added</p>
-    </div>
-    <div ng-controller="LoginMakerController as loginMakerCtrl">
-      <form>
-        <input ng-model='loginMakerCtrl.makerName'>
-        <button class='btn-login' ng-click='loginMakerCtrl.loginMaker()'>Login</button>
-      </form>
-      <p class='welcome'>Welcome, {{loginMakerCtrl.currentUser.name}}</p>
-    </div>
 
+      <div ng-controller="LoginMakerController as loginMakerCtrl">
+        <form>
+          <input ng-model='loginMakerCtrl.makerName'>
+          <button class='btn-login' ng-click='loginMakerCtrl.loginMaker()'>Login</button>
+        </form>
+        <p class='welcome'>Welcome, {{loginMakerCtrl.currentUser.name}}</p>
+      </div>
+    </div>
   </body>
 </html>
