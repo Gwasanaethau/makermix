@@ -16,16 +16,25 @@
       <form>
         <input ng-model="addMakerCtrl.addMaker" ng-click="addMakerCtrl.hideNotice()">
         <button class="btn-add" ng-click="addMakerCtrl.postMaker(addMakerCtrl.addMaker)">Add Maker</button>
-      </form>
       <p class="notice" ng-show="addMakerCtrl.isNoticeShow">{{addMakerCtrl.addedMaker}} added</p>
+      </form>
+    </div>
 
-      <div ng-controller="LoginMakerController as loginMakerCtrl">
-        <form>
-          <input ng-model='loginMakerCtrl.makerName'>
-          <button class='btn-login' ng-click='loginMakerCtrl.loginMaker()'>Login</button>
-        </form>
-        <p class='welcome'>Welcome, {{loginMakerCtrl.currentUser.name}}</p>
-      </div>
+    <div ng-controller="LoginMakerController as loginMakerCtrl">
+      <form>
+        <input ng-model='loginMakerCtrl.makerName'>
+        <button class='btn-login' ng-click='loginMakerCtrl.loginMaker()'>Login</button>
+      </form>
+      <p class='welcome'>Welcome, {{loginMakerCtrl.currentUser.name}}</p>
+    </div>
+
+    <div ng-controller="GetMakersController as getMakerCtrl">
+      <form>
+        <button id="show_btn" ng-click="getMakerCtrl.getMakers()">Show Makers</button>
+      </form>
+      <ul id="maker_list">
+        <li class="maker" ng-repeat="maker in getMakerCtrl.makers">{{maker.name}}</li>
+      </ul>
     </div>
   </body>
 </html>

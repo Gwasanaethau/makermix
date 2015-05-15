@@ -12,6 +12,10 @@ app.get("/session/Rob",function(request, response){
   response.send({"_id": 1, "name": "Rob"});
 });
 
+app.get("/makers", function(request, response){
+  response.send({ makers: [ { id: 1, name: "Joe" }, { id: 2, name: "Mark" } ] });
+});
+
 app.post("/makers", function(request, response){
   response.send({"_id": 1, "name": "Joe"});
 });
