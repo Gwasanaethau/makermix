@@ -34,7 +34,7 @@ app.controller('LoginMakerController', ['$http',function($http){
   this.currentUser = {};
   this.loginMaker = function(){
     console.log(self.makerName);
-    $http.get('https://ronin-rearend.herokuapp.com/session/' + self.makerName)
+    $http.get('https://ronin-rearend.herokuapp.com/makers/session/' + self.makerName)
     .success(function(data){
       console.log(data)
       self.currentUser = data;
