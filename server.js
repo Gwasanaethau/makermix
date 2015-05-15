@@ -20,7 +20,7 @@ app.post("/makers", function(request, response){
   response.send({"_id": 1, "name": "Joe"});
 });
 
-server.listen(3000, function(){
+server.listen(process.env.PORT || 3000, function(){
   console.log("Server working on 3000");
 });
 
