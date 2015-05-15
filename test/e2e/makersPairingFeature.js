@@ -1,12 +1,7 @@
-var mock = require('protractor-http-mock');
 describe('Makers Pairing Finder', function() {
 
   var addMakerBox = element(by.model('addMakerCtrl.addMaker'));
   var addMakerButton = element(by.className('btn'));
-
-  afterEach(function(){
-    mock.teardown();
-  });
 
   it('has a title', function() {
     browser.get('http://localhost:3000');
@@ -14,21 +9,11 @@ describe('Makers Pairing Finder', function() {
   });
 
   it('can add a Maker', function() {
-    mock([{
-      request: {
-        path: '/makers',
-        method: 'POST'
-      },
-      response: {
-        data: {
-          id: 1,
-          name: 'Joe'
-        }
-      }
-    }]);
+
     browser.get('http://localhost:3000');
+    browser.waitForAngular();
     addMakerBox.sendKeys('Joe');
     addMakerButton.click();
-    expect(element(by.css('.notice'))).toMatch('Joe added');
+    expect(element(by.css('.notice')).getText()).toMatch('Joe added');
   });
 });

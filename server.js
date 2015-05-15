@@ -8,6 +8,10 @@ app.get("/",function(request, response){
   response.sendFile(__dirname + '/index.html');
 });
 
+app.post("/makers", function(request, response){
+  response.send({"_id": 1, "name": "Joe"});
+});
+
 server.listen(3000, function(){
   console.log("Server working on 3000");
 });
