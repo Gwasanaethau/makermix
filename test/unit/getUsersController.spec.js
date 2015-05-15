@@ -10,8 +10,8 @@ describe('GetMakersController',function(){
     httpBackend
       .when('GET', "http://localhost:3000/makers")
       .respond(
-        { makers: [ { id: 1, name: "Joe" },
-        { id: 2, name: "Mark" } ] }
+        { makers: [ { _id: 1, name: "Joe" },
+        { _id: 2, name: "Mark" } ] }
       );
   }));
   it('returns users',function(){

@@ -28,3 +28,17 @@ app.controller('AddMakerController', ['$http', function($http) {
     self.isNoticeShow = false;
   };
 }]);
+
+app.controller('LoginMakerController', ['$http',function($http){
+  var self = this;
+  this.currentUser = {};
+  this.loginMaker = function(){
+    console.log(self.makerName);
+    $http.get('http://localhost:3000/session/' + self.makerName)
+    .success(function(data){
+      console.log(data)
+      self.currentUser = data;
+    })
+    ;
+  };
+}]);

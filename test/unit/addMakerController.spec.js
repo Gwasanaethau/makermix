@@ -13,13 +13,13 @@ describe('AddMakerController', function() {
     httpBackend = $httpBackend;
     httpBackend
       .when('POST', 'http://localhost:3000/makers')
-      .respond({ id: 1, name: "Joe" });
+      .respond({ _id: 1, name: "Joe" });
   }));
 
   it('adds a Maker', function() {
     ctrl.addMaker = 'Joe';
     ctrl.postMaker();
     httpBackend.flush();
-    expect(ctrl.addedMaker.name).toEqual('Joe');
+    expect(ctrl.addedMaker).toEqual('Joe');
   });
 });
