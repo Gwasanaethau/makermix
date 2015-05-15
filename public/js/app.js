@@ -14,11 +14,17 @@ app.controller('AddMakerController', ['$http', function($http) {
 
   var self = this;
   this.addedMaker = "";
+  this.isNoticeShow = false
 
   this.postMaker = function(name){
-    $http.post('http://localhost:3030/makers', {name: name}).
+    $http.post('http://localhost:3000/makers', {name: name}).
       success(function(data, status, headers, config){
-        self.addedMaker = data;
+        self.addedMaker = data.name;
+        self.isNoticeShow = true;
       });
+  };
+
+  this.hideNotice = function(){
+    self.isNoticeShow = false;
   };
 }]);

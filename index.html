@@ -14,10 +14,10 @@
     </header>
     <div ng-controller="AddMakerController as addMakerCtrl">
       <form>
-        <input ng-model="addMakerCtrl.addMaker">
+        <input ng-model="addMakerCtrl.addMaker" ng-click="addMakerCtrl.hideNotice()">
         <button class="btn" ng-click="addMakerCtrl.postMaker(addMakerCtrl.addMaker)">Add Maker</button>
       </form>
-      <p class="notice">{{addMakerCtrl.addedMaker}} added</p>
+      <p class="notice" ng-show="addMakerCtrl.isNoticeShow">{{addMakerCtrl.addedMaker}} added</p>
     <div>
 
   </body>
