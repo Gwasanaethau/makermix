@@ -18,7 +18,14 @@
         <button class="btn" ng-click="addMakerCtrl.postMaker(addMakerCtrl.addMaker)">Add Maker</button>
       </form>
       <p class="notice">{{addMakerCtrl.addedMaker}} added</p>
-    <div>
-
+    </div>
+    <div ng-controller="GetMakersController as getMakerCtrl">
+      <form>
+        <button id="show_btn" ng-click="getMakerCtrl.getMakers()">Show Makers</button>
+      </form>
+      <ul id="maker_list">
+        <li class="maker" ng-repeat="maker in getMakerCtrl.makers">{{maker.name}}</li>
+      </ul>
+    </div>
   </body>
 </html>
