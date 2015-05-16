@@ -1,4 +1,5 @@
 [![Build Status](https://travis-ci.org/Gwasanaethau/makermix.svg?branch=master)](https://travis-ci.org/Gwasanaethau/makermix)
+[![Build Status](https://travis-ci.org/Gwasanaethau/makermix.svg?branch=travis3)](https://travis-ci.org/Gwasanaethau/makermix)
 
 # Makermix #
 
