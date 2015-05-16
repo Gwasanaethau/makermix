@@ -15,7 +15,7 @@ describe('LoginMakerController',function(){
   }));
   it('returns a user given a name',function(){
     ctrl.makerName = 'Rob';
-    ctrl.loginMaker(true);
+    ctrl.loginMaker();
     httpBackend.flush();
     expect(ctrl.currentUser.name).toEqual("Rob");
     expect(ctrl.currentUser._id).toEqual(1);

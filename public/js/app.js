@@ -4,8 +4,10 @@ var prodServer = 'https://ronin-rearend.herokuapp.com/';
 
 app.controller("GetMakersController", ["$http", function($http){
   var self = this;
-  self.getMakers = function(testEnv){
-    var server = testEnv ? testServer : prodServer;
+  self.getMakers = function(){
+    var server = testServer;
+    // console.log(testEnv);
+    // var server = testEnv ? testServer : prodServer;
     var userList = $http.get(server + 'makers');
     userList.success(function(data){
       self.makers = data.makers;
@@ -19,8 +21,9 @@ app.controller('AddMakerController', ['$http', function($http) {
   this.addedMaker = "";
   this.isNoticeShow = false;
 
-  this.postMaker = function(testEnv){
-    var server = testEnv ? testServer : prodServer;
+  this.postMaker = function(){
+    var server = testServer;
+    // var server = testEnv ? testServer : prodServer;
     $http.post(server + 'makers', {name: name}).
       success(function(data, status, headers, config){
         self.addedMaker = data.name;
@@ -36,8 +39,9 @@ app.controller('AddMakerController', ['$http', function($http) {
 app.controller('LoginMakerController', ['$http',function($http){
   var self = this;
   this.currentUser = {};
-  this.loginMaker = function(testEnv){
-    var server = testEnv ? testServer : prodServer;
+  this.loginMaker = function(){
+    var server = testServer;
+    // var server = testEnv ? testServer : prodServer;
     $http.get(server + 'makers/session/' + self.makerName)
     .success(function(data){
       self.currentUser = data;
