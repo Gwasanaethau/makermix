@@ -1,5 +1,5 @@
 var app = angular.module('MakerMix', ['ngResource']);
-var testServer = 'http://localhost:3000/';
+var testServer = 'http://localhost:8888/';
 var prodServer = 'https://ronin-rearend.herokuapp.com/';
 
 app.controller("GetMakersController", ["$http", function($http){
