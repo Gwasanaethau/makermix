@@ -15,7 +15,7 @@ describe('GetMakersController',function(){
       );
   }));
   it('returns users',function(){
-    ctrl.getMakers();
+    ctrl.getMakers(true);
     httpBackend.flush();
     expect(ctrl.makers[0].name).toEqual("Joe");
   });

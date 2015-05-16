@@ -18,7 +18,7 @@ describe('AddMakerController', function() {
 
   it('adds a Maker', function() {
     ctrl.addMaker = 'Joe';
-    ctrl.postMaker();
+    ctrl.postMaker(true);
     httpBackend.flush();
     expect(ctrl.addedMaker).toEqual('Joe');
   });

@@ -8,7 +8,7 @@ app.get("/",function(request, response){
   response.sendFile(__dirname + '/index.html');
 });
 
-app.get("/session/Rob",function(request, response){
+app.get("/makers/session/Rob",function(request, response){
   response.send({"_id": 1, "name": "Rob"});
 });
 
