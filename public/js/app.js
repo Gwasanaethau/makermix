@@ -36,7 +36,6 @@ app.controller('LoginMakerController', ['$http',function($http){
     $http.get('https://ronin-rearend.herokuapp.com/makers/session/' + self.makerName)
     .success(function(data){
       self.currentUser = data;
-    })
-    ;
+    });
   };
 }]);
