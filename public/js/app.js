@@ -14,7 +14,7 @@ app.controller('AddMakerController', ['$http', function($http) {
 
   var self = this;
   this.addedMaker = "";
-  this.isNoticeShow = false
+  this.isNoticeShow = false;
 
   this.postMaker = function(name){
     $http.post('http://localhost:3000/makers', {name: name}).
@@ -36,7 +36,7 @@ app.controller('LoginMakerController', ['$http',function($http){
     console.log(self.makerName);
     $http.get('http://localhost:3000/session/' + self.makerName)
     .success(function(data){
-      console.log(data)
+      console.log(data);
       self.currentUser = data;
     })
     ;
