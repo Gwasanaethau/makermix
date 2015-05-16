@@ -8,7 +8,7 @@ describe('LoginMakerController',function(){
   beforeEach(inject(function($httpBackend){
     httpBackend = $httpBackend;
     httpBackend
-      .when('GET', "http://localhost:3000/makers/session/Rob")
+      .when('GET', "http://localhost:8888/makers/session/Rob")
       .respond(
         { _id: 1, name: "Rob" }
       );

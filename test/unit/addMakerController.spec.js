@@ -12,7 +12,7 @@ describe('AddMakerController', function() {
   beforeEach(inject(function($httpBackend) {
     httpBackend = $httpBackend;
     httpBackend
-      .when('POST', 'http://localhost:3000/makers')
+      .when('POST', 'http://localhost:8888/makers')
       .respond({ _id: 1, name: "Joe" });
   }));
 
