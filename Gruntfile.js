@@ -80,6 +80,14 @@ module.exports = function(grunt){
           configFile:'test/e2e/conf.js'
         }
       }
+    },
+    coveralls:{
+      options:{
+        force:true
+      },
+      all:{
+        src:'coverage/**/lcov.info'
+      }
     }
   });
   grunt.loadNpmTasks('grunt-ng-constant');
@@ -90,6 +98,7 @@ module.exports = function(grunt){
   grunt.loadNpmTasks('grunt-protractor-webdriver');
   grunt.loadNpmTasks('grunt-apimocker');
   grunt.loadNpmTasks('grunt-protractor-runner');
-  grunt.registerTask('default', ['ngconstant:testing','jshint','karma','exec','express','apimocker','protractor_webdriver','protractor']);
+  grunt.loadNpmTasks('grunt-coveralls');
+  grunt.registerTask('default', ['ngconstant:testing','jshint','karma','exec','express','apimocker','protractor_webdriver','protractor','coveralls']);
   grunt.registerTask('deployment', ['ngconstant:production']);
 };
