@@ -8,7 +8,7 @@ module.exports = function(config) {
     basePath: '',
 
     coverageReporter:{
-      type:'lcovonly',
+      type:'html',
       dir:'coverage'
     },
 
