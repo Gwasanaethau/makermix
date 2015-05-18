@@ -71,16 +71,27 @@ module.exports = function(grunt){
     protractor:{
       options:{
         configFile:'test/e2e/conf.js',
-        args:{
-          capabilities:{
-            'browserName':'phantomjs',
-            'phantomjs.binary.path':require('phantomjs').path,
-            'phantomjs.ghostdriver.cli.args':['--loglevel=DEBUG']
+        args:{}
+      },
+      standard:{
+        options:{
+          args:{
+            capabilities:{
+              'browserName':'chrome'
+            }
           }
         }
       },
-      all:{
-        options:{}
+      travis:{
+        options:{
+          args:{
+            capabilities:{
+              'browserName':'phantomjs',
+              'phantomjs.binary.path':require('phantomjs').path,
+              'phantomjs.ghostdriver.cli.args':['--loglevel=DEBUG']
+            }
+          }
+        }
       }
     },
     coveralls:{
@@ -110,7 +121,7 @@ module.exports = function(grunt){
     'express',
     'apimocker',
     'protractor_webdriver',
-    'protractor'
+    'protractor:standard'
   ]);
 
   grunt.registerTask('travis',[
@@ -121,7 +132,7 @@ module.exports = function(grunt){
     'express',
     'apimocker',
     'protractor_webdriver',
-    'protractor',
+    'protractor:travis',
     'coveralls'
   ]);
 
