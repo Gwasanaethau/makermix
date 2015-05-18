@@ -8,7 +8,7 @@ describe('Makers Pairing Finder', function() {
   beforeEach(function(){
     browser.get('http://localhost:3000');
     browser.waitForAngular();
-  })
+  });
 
   it('has a title', function() {
     expect(browser.getTitle()).toEqual('Makers Pairing Finder');
@@ -33,12 +33,8 @@ describe('Makers Pairing Finder', function() {
     expect(element(by.css('.welcome')).getText()).toMatch('Welcome, Rob');
   });
 
-  it('can select a pair', function(){
-
-  })
-
   it('can retrieve list of makers categorized by pairing status', function(){
     loginMakerBox.sendKeys('Rob');
     loginMakerButton.click();
-  })
+  });
 });

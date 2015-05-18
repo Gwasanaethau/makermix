@@ -5,6 +5,6 @@ describe('Display Makers', function() {
     browser.get('http://localhost:3000');
     browser.waitForAngular();
     showMakersButton.click();
-    expect(element(by.className('maker')).getText()).toMatch('Joe');
+    expect(element.all(by.className('maker')).get(0).getText()).toMatch('Joe');
   });
 });

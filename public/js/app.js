@@ -14,7 +14,7 @@ app.controller('AddMakerController', ['$http', function($http) {
 
   var self = this;
   this.addedMaker = "";
-  this.isNoticeShow = false
+  this.isNoticeShow = false;
 
   this.postMaker = function(name){
     $http.post('https://ronin-rearend.herokuapp.com/makers', {name: name}).
@@ -33,12 +33,9 @@ app.controller('LoginMakerController', ['$http',function($http){
   var self = this;
   this.currentUser = {};
   this.loginMaker = function(){
-    console.log(self.makerName);
     $http.get('https://ronin-rearend.herokuapp.com/makers/session/' + self.makerName)
     .success(function(data){
-      console.log(data)
       self.currentUser = data;
-    })
-    ;
+    });
   };
 }]);
