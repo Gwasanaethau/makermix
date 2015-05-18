@@ -32,14 +32,23 @@ module.exports = function(grunt){
       ]
     },
     karma:{
-      unit:{
+      standard:{
+        configFile:'karma.conf.js',
+        singleRun:true,
+        browsers:['PhantomJS'],
+        coverageReporter:{
+          type:'html',
+          dir:'coverage'
+        }
+      },
+      travis:{
         configFile:'karma.conf.js',
         singleRun:true,
         browsers:['PhantomJS'],
         coverageReporter:{
           type:'lcovonly',
           dir:'coverage'
-        },
+        }
       }
     },
     exec:{
@@ -116,7 +125,7 @@ module.exports = function(grunt){
   grunt.registerTask('default',[
     'ngconstant:testing',
     'jshint',
-    'karma',
+    'karma:standard',
     'exec',
     'express',
     'apimocker',
@@ -127,7 +136,7 @@ module.exports = function(grunt){
   grunt.registerTask('travis',[
     'ngconstant:testing',
     'jshint',
-    'karma',
+    'karma:travis',
     'exec',
     'express',
     'apimocker',
