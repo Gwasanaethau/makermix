@@ -54,6 +54,11 @@ module.exports = function(grunt){
         }
       }
     },
+    apimocker:{
+      options:{
+        configFile:'apimocker-grunt.json'
+      }
+    },
     protractor_webdriver:{
       options:{
         path:'node_modules/webdriver-manager/bin/',
@@ -61,11 +66,6 @@ module.exports = function(grunt){
       },
       all:{
         options:{}
-      }
-    },
-    apimocker:{
-      options:{
-        configFile:'apimocker-grunt.json'
       }
     },
     protractor:{
@@ -80,9 +80,7 @@ module.exports = function(grunt){
         }
       },
       all:{
-        options:{
-          configFile:'test/e2e/conf.js'
-        }
+        options:{}
       }
     },
     coveralls:{
@@ -99,10 +97,33 @@ module.exports = function(grunt){
   grunt.loadNpmTasks('grunt-karma');
   grunt.loadNpmTasks('grunt-exec');
   grunt.loadNpmTasks('grunt-express-server');
-  grunt.loadNpmTasks('grunt-protractor-webdriver');
   grunt.loadNpmTasks('grunt-apimocker');
+  grunt.loadNpmTasks('grunt-protractor-webdriver');
   grunt.loadNpmTasks('grunt-protractor-runner');
   grunt.loadNpmTasks('grunt-coveralls');
-  grunt.registerTask('default', ['ngconstant:testing','jshint','karma','exec','express','apimocker','protractor_webdriver','protractor','coveralls']);
+
+  grunt.registerTask('default',[
+    'ngconstant:testing',
+    'jshint',
+    'karma',
+    'exec',
+    'express',
+    'apimocker',
+    'protractor_webdriver',
+    'protractor'
+  ]);
+
+  grunt.registerTask('travis',[
+    'ngconstant:testing',
+    'jshint',
+    'karma',
+    'exec',
+    'express',
+    'apimocker',
+    'protractor_webdriver',
+    'protractor',
+    'coveralls'
+  ]);
+
   grunt.registerTask('deployment', ['ngconstant:production']);
 };

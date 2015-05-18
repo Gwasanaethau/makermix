@@ -5,4 +5,4 @@ before_install:
 - "npm install grunt-cli"
 - "npm install karma-cli"
 script:
-- "grunt"
+- "grunt travis"
