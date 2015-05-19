@@ -1,31 +1,24 @@
-var app = angular.module('MakerMix', ['ngResource']);
-var testServer = 'http://localhost:8888/';
-var prodServer = 'https://ronin-rearend.herokuapp.com/';
+var app = angular.module('MakerMix', ['ngResource', 'config']);
 
-app.controller("GetMakersController", ["$http", function($http){
+app.controller('GetMakersController', ['$http', 'ENV', function($http, ENV){
   var self = this;
   self.getMakers = function(){
-    var server = testServer;
-    // console.log(testEnv);
-    // var server = testEnv ? testServer : prodServer;
-    var userList = $http.get(server + 'makers');
-    userList.success(function(data){
-      self.makers = data.makers;
+    $http.get(ENV.apiLink + 'makers')
+      .success(function(data){
+        self.makers = data.makers;
     });
   };
 }]);
 
-app.controller('AddMakerController', ['$http', function($http) {
+app.controller('AddMakerController', ['$http', 'ENV', function($http, ENV) {
 
   var self = this;
   this.addedMaker = "";
   this.isNoticeShow = false;
 
   this.postMaker = function(){
-    var server = testServer;
-    // var server = testEnv ? testServer : prodServer;
-    $http.post(server + 'makers', {name: name}).
-      success(function(data, status, headers, config){
+    $http.post(ENV.apiLink + 'makers', {name: name})
+      .success(function(data, status, headers, config){
         self.addedMaker = data.name;
         self.isNoticeShow = true;
       });
@@ -36,13 +29,11 @@ app.controller('AddMakerController', ['$http', function($http) {
   };
 }]);
 
-app.controller('LoginMakerController', ['$http',function($http){
+app.controller('LoginMakerController', ['$http', 'ENV', function($http, ENV){
   var self = this;
   this.currentUser = {};
   this.loginMaker = function(){
-    var server = testServer;
-    // var server = testEnv ? testServer : prodServer;
-    $http.get(server + 'makers/session/' + self.makerName)
+    $http.get(ENV.apiLink + 'makers/session/' + self.makerName)
     .success(function(data){
       self.currentUser = data;
     });
