@@ -3,6 +3,5 @@ node_js:
 - "0.12"
 before_install:
 - "npm install grunt-cli"
-- "npm install karma-cli"
 script:
 - "grunt travis"
