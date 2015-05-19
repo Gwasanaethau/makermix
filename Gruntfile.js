@@ -145,5 +145,6 @@ module.exports = function(grunt){
     'coveralls'
   ]);
 
+  grunt.registerTask('testing', ['ngconstant:testing']);
   grunt.registerTask('deployment', ['ngconstant:production']);
 };
