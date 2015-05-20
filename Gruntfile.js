@@ -22,6 +22,8 @@ module.exports = function(grunt){
         }
       }
     },
+
+
     jshint:{
       all:[
         'Gruntfile.js',
@@ -31,6 +33,8 @@ module.exports = function(grunt){
         'karma.conf.js'
       ]
     },
+
+
     karma:{
       standard:{
         configFile:'karma.conf.js',
@@ -51,23 +55,36 @@ module.exports = function(grunt){
         }
       }
     },
+
+
     exec:{
       updateWebdriver:{
         command:'node_modules/webdriver-manager/bin/webdriver-manager update --standalone'
       }
     },
+
+
     express:{
       dev:{
         options:{
           script:'server.js'
         }
+      },
+      coverage:{
+        options:{
+          script:'instrument/server.js'
+        }
       }
     },
+
+
     apimocker:{
       options:{
         configFile:'apimocker-grunt.json'
       }
     },
+
+
     protractor_webdriver:{
       options:{
         path:'node_modules/webdriver-manager/bin/',
@@ -77,6 +94,8 @@ module.exports = function(grunt){
         options:{}
       }
     },
+
+
     protractor:{
       options:{
         configFile:'test/e2e/conf.js',
@@ -103,6 +122,71 @@ module.exports = function(grunt){
         }
       }
     },
+
+
+    instrument:{
+      files:[
+        'public/js/*.js',
+        'test/e2e/*.js',
+        'server.js'
+      ],
+      options:{
+        lazy:true,
+        basePath:'instrument'
+      }
+    },
+
+
+    copy:{
+      coverage:{
+        files:[{
+          expand:true,
+          dest:'instrument/',
+          src:[
+            'index.html',
+            'public/bower_components/**/*'
+          ]
+        }]
+      }
+    },
+
+
+    protractor_coverage:{
+      options:{
+        keepAlive:true,
+        coverageDir:'coverage/e2e',
+        args:{
+          baseUrl:'http://localhost:3000',
+          specs:[
+            'instrument/test/e2e/*Feature.js'
+          ]
+        }
+      },
+      all:{
+        options:{
+          configFile:'instrument/test/e2e/conf.js'//,
+          // args:{
+          //   capabilities:{
+          //     'browserName':'phantomjs',
+          //     'phantomjs.binary.path':require('phantomjs').path,
+          //     'phantomjs.ghostdriver.cli.args':['--loglevel=DEBUG']
+          //   }
+          // }
+        }
+      }
+    },
+
+
+    makeReport:{
+      src:'coverage/e2e/*.json',
+      options:{
+        type:'lcov',
+        dir:'coverage/e2e',
+        print:'detail'
+      }
+    },
+
+
     coveralls:{
       options:{
         force:true
@@ -112,6 +196,7 @@ module.exports = function(grunt){
       }
     }
   });
+
   grunt.loadNpmTasks('grunt-ng-constant');
   grunt.loadNpmTasks('grunt-contrib-jshint');
   grunt.loadNpmTasks('grunt-karma');
@@ -121,13 +206,16 @@ module.exports = function(grunt){
   grunt.loadNpmTasks('grunt-protractor-webdriver');
   grunt.loadNpmTasks('grunt-protractor-runner');
   grunt.loadNpmTasks('grunt-coveralls');
+  grunt.loadNpmTasks('grunt-istanbul');
+  grunt.loadNpmTasks('grunt-protractor-coverage');
+  grunt.loadNpmTasks('grunt-contrib-copy');
 
   grunt.registerTask('default',[
     'ngconstant:testing',
     'jshint',
     'karma:standard',
     'exec',
-    'express',
+    'express:dev',
     'apimocker',
     'protractor_webdriver',
     'protractor:standard'
@@ -138,13 +226,20 @@ module.exports = function(grunt){
     'jshint',
     'karma:travis',
     'exec',
-    'express',
+    'express:dev',
     'apimocker',
     'protractor_webdriver',
     'protractor:travis',
+    'express:dev:stop',
+    'instrument',
+    'copy',
+    'express:coverage',
+    'protractor_webdriver',
+    'protractor_coverage',
+    'makeReport',
     'coveralls'
   ]);
 
-  grunt.registerTask('testing', ['ngconstant:testing']);
-  grunt.registerTask('deployment', ['ngconstant:production']);
+  grunt.registerTask('testing',['ngconstant:testing']);
+  grunt.registerTask('deployment',['ngconstant:production']);
 };
