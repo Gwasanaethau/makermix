@@ -1,6 +1,5 @@
 [![Build Status](https://travis-ci.org/Gwasanaethau/makermix.svg?branch=master)](https://travis-ci.org/Gwasanaethau/makermix)
-[![Build Status](https://travis-ci.org/Gwasanaethau/makermix.svg?branch=coveralls)](https://travis-ci.org/Gwasanaethau/makermix)
-[![Coverage Status](https://coveralls.io/repos/Gwasanaethau/makermix/badge.svg?branch=coveralls)](https://coveralls.io/r/Gwasanaethau/makermix?branch=coveralls)
+[![Coverage Status](https://coveralls.io/repos/Gwasanaethau/makermix/badge.svg?branch=master)](https://coveralls.io/r/Gwasanaethau/makermix?branch=master)
 
 # Makermix #
 
