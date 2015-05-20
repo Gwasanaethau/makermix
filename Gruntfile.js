@@ -159,19 +159,17 @@ module.exports = function(grunt){
           baseUrl:'http://localhost:3000',
           specs:[
             'instrument/test/e2e/*Feature.js'
-          ]
+          ],
+          capabilities:{
+            'browserName':'phantomjs',
+            'phantomjs.binary.path':require('phantomjs').path,
+            'phantomjs.ghostdriver.cli.args':['--loglevel=DEBUG']
+          }
         }
       },
       all:{
         options:{
-          configFile:'instrument/test/e2e/conf.js'//,
-          // args:{
-          //   capabilities:{
-          //     'browserName':'phantomjs',
-          //     'phantomjs.binary.path':require('phantomjs').path,
-          //     'phantomjs.ghostdriver.cli.args':['--loglevel=DEBUG']
-          //   }
-          // }
+          configFile:'instrument/test/e2e/conf.js'
         }
       }
     },
