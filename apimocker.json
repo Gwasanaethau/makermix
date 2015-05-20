@@ -1,0 +1,19 @@
+{
+  "webServices": {
+    "makers": {
+      "verbs": ["get", "post"],
+      "responses": {
+        "get": {
+          "mockFile": "get_makers.json"
+        },
+        "post": {
+          "mockFile": "post_makers.json"
+        }
+      }
+    },
+    "makers/session/Rob": {
+      "verbs": ["get"],
+      "mockFile": "get_session.json"
+    }
+  }
+}

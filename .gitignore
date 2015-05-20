@@ -1,2 +1,5 @@
 bower_components
+coverage
+instrument
 node_modules
+npm-debug.log
